@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rcmgleite/asvinsKafka"
+	"github.com/rcmgleite/common_io"
 	"github.com/rcmgleite/notification_module/mailer"
 )
 
 func TestCase1(t *testing.T) {
-	asvinsKafka.Setup()
-	defer asvinsKafka.TearDown()
+	common_io.Setup()
+	defer common_io.TearDown()
 
 	m := mailer.Mail{
 		To:      []string{"asvins.poli@gmail.com"},
@@ -25,6 +25,6 @@ func TestCase1(t *testing.T) {
 		t.Error(err)
 	}
 
-	asvinsKafka.Publish("send_mail", b)
+	common_io.Publish("send_mail", b)
 	fmt.Println(">>Send_mail message published!")
 }

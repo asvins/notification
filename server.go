@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/rcmgleite/asvinsKafka"
+	"github.com/rcmgleite/common_io"
 	"github.com/rcmgleite/labSoft2_Estoque/router"
-	"github.com/rcmgleite/notification_module/mailer"
+	"github.com/rcmgleite/notification/mailer"
 )
 
 // Stupid example
@@ -19,11 +19,11 @@ func main() {
 	http.Handle("/", r)
 
 	// Here we can subscribe to tags like send_sms, send_mail, send_push_notification, etc ...
-	asvinsKafka.Setup()
-	defer asvinsKafka.TearDown()
+	common_io.Setup()
+	defer common_io.TearDown()
 
-	asvinsKafka.Subscribe("send_mail", mailer.SendMail)
-	asvinsKafka.Subscribe("print_stdout", printStdout)
+	common_io.Subscribe("send_mail", mailer.SendMail)
+	common_io.Subscribe("print_stdout", printStdout)
 
 	fmt.Println("Server running on port: 8080")
 
