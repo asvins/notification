@@ -6,10 +6,10 @@ import (
 	"testing"
 
 	"github.com/rcmgleite/common_io"
-	"github.com/rcmgleite/notification_module/mailer"
+	"github.com/rcmgleite/notification/mailer"
 )
 
-func TestCase1(t *testing.T) {
+func TestSendMail(t *testing.T) {
 	common_io.Setup()
 	defer common_io.TearDown()
 
@@ -26,5 +26,8 @@ func TestCase1(t *testing.T) {
 	}
 
 	common_io.Publish("send_mail", b)
-	fmt.Println(">>Send_mail message published!")
+	fmt.Println(">>Send_mail message 1 published!")
+
+	common_io.Publish("send_mail", b)
+	fmt.Println(">>Send_mail message 2 published!")
 }
