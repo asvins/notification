@@ -9,21 +9,20 @@ import (
 	"github.com/rcmgleite/notification/mailer"
 )
 
-// Stupid example
-func printStdout(msg []byte) {
-	fmt.Println(string(msg))
-}
-
 func main() {
 	r := router.NewRouter()
 	http.Handle("/", r)
 
-	// Here we can subscribe to tags like send_sms, send_mail, send_push_notification, etc ...
-	common_io.Setup()
-	defer common_io.TearDown()
+	topics := make(map[string]common_io.CallbackFunc)
+	topics["send_mail"] = mailer.SendMail
 
-	common_io.Subscribe("send_mail", mailer.SendMail)
-	common_io.Subscribe("print_stdout", printStdout)
+	config := &common_io.Config{
+		ModuleName: "notification",
+		Topics:     topics,
+	}
+
+	common_io.Setup(config)
+	defer common_io.TearDown()
 
 	fmt.Println("Server running on port: 8080")
 

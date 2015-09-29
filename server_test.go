@@ -10,7 +10,9 @@ import (
 )
 
 func TestSendMail(t *testing.T) {
-	common_io.Setup()
+	common_io.Setup(&common_io.Config{
+		ModuleName: "testSendMail",
+	})
 	defer common_io.TearDown()
 
 	m := mailer.Mail{
