@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"net/http"
-
 	"github.com/rcmgleite/common_io"
 	"github.com/rcmgleite/labSoft2_Estoque/router"
 	"github.com/rcmgleite/notification/mailer"
+	"log"
+	"net/http"
 )
 
 func main() {
@@ -16,15 +16,21 @@ func main() {
 	topics := make(map[string]common_io.CallbackFunc)
 	topics["send_mail"] = mailer.SendMail
 
-	config := &common_io.Config{
-		ModuleName: "notification",
-		Topics:     topics,
+	cfg, err := common_io.LoadConfig()
+	if err != nil {
+		log.Fatal(err)
 	}
+	cfg.ModuleName = "notification"
+	cfg.Topics = topics
 
-	common_io.Setup(config)
+	common_io.Setup(cfg)
 	defer common_io.TearDown()
 
-	fmt.Println("Server running on port: 8080")
+	serverConf, err := LoadConfig()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Server running on port: ", serverConf.Server.Port)
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":"+serverConf.Server.Port, nil)
 }

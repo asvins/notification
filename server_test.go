@@ -10,9 +10,13 @@ import (
 )
 
 func TestSendMail(t *testing.T) {
-	common_io.Setup(&common_io.Config{
-		ModuleName: "testSendMail",
-	})
+	cfg, err := common_io.LoadConfig()
+	if err != nil {
+		t.Error(err)
+	}
+	cfg.ModuleName = "testSendMail"
+
+	common_io.Setup(cfg)
 	defer common_io.TearDown()
 
 	m := mailer.Mail{
