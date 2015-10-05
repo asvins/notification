@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/rcmgleite/common_io"
-	"github.com/rcmgleite/labSoft2_Estoque/router"
-	"github.com/rcmgleite/notification/mailer"
 	"log"
 	"net/http"
+
+	"github.com/asvins/common_io"
+	"github.com/asvins/notification/mailer"
+	"github.com/rcmgleite/router"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rcmgleite/common_io"
-	"github.com/rcmgleite/notification/mailer"
+	"github.com/asvins/common_io"
+	"github.com/asvins/notification/mailer"
 )
 
 func TestSendMail(t *testing.T) {
