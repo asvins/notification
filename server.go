@@ -12,6 +12,9 @@ import (
 
 func main() {
 	r := router.NewRouter()
+	r.AddRoute("/api/discovery", router.GET, func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "NOTIFICATION MODULE - TODO")
+	})
 	http.Handle("/", r)
 
 	topics := make(map[string]common_io.CallbackFunc)
