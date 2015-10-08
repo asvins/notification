@@ -1,6 +1,6 @@
 ; common_io config file
 [kafka]
-brokerlist = kafka
+brokerlist = kafka:9092
 
 [zookeeper]
-addrlist = zk
+addrlist = zk:2181
