@@ -8,8 +8,8 @@ import (
 
 	"github.com/asvins/common_io"
 	"github.com/asvins/notification/mailer"
+	"github.com/asvins/router"
 	"github.com/asvins/utils/config"
-	"github.com/rcmgleite/router"
 )
 
 func main() {
