@@ -1,4 +1,7 @@
 ; common_io config file
+[modulename]
+value = notification
+
 [kafka]
 brokerlist = kafka:9092
 maxretry = 5

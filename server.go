@@ -22,8 +22,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	cfg.ModuleName = "notification"
 	cfg.Topics = topics
+
+	fmt.Println("[INFO] Module name: ", cfg.ModuleName.Value)
 
 	common_io.Setup(&cfg)
 	defer common_io.TearDown()
