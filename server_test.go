@@ -3,21 +3,27 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"testing"
 
 	"github.com/asvins/common_io"
 	"github.com/asvins/notification/mailer"
+	"github.com/asvins/utils/config"
 )
 
 func TestSendMail(t *testing.T) {
-	cfg, err := common_io.LoadConfig()
+	cfg := common_io.Config{}
+	err := config.Load("common_io_config.gcfg", &cfg)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	producer, err := common_io.NewProducer(cfg)
 	if err != nil {
 		t.Error(err)
 	}
-	cfg.ModuleName = "testSendMail"
 
-	common_io.Setup(cfg)
-	defer common_io.TearDown()
+	defer producer.TearDown()
 
 	m := mailer.Mail{
 		To:      []string{"asvins.poli@gmail.com"},
@@ -31,9 +37,6 @@ func TestSendMail(t *testing.T) {
 		t.Error(err)
 	}
 
-	common_io.Publish("send_mail", b)
+	producer.Publish("send_mail", b)
 	fmt.Println(">>Send_mail message 1 published!")
-
-	common_io.Publish("send_mail", b)
-	fmt.Println(">>Send_mail message 2 published!")
 }
