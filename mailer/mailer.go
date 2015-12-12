@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/smtp"
+	"strings"
 )
 
 // Mail ...
@@ -51,6 +52,15 @@ func SendMail(msg []byte) {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
+
+func Parse(opts map[string]string, raw string) string {
+	result := raw
+	for k, v := range opts {
+		matching := fmt.Sprintf("{{%s}}", k)
+		result = strings.Replace(result, matching, v, -1)
+	}
+	return result
 }
 
 //TEMPLATES
