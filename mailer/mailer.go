@@ -116,10 +116,70 @@ const TemplatePackTime = `
 
 // 2) COMPLETE SEUS DADOS
 const TemplateFinishProfile = `
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+			<meta charset="utf-8">
+					<title>Asvins - Complete Seu Cadastro</title>
+						</head>
+							<body style="color:#909090;font-family:verdana,arial,sans-serif;font-size:18px;text-align:center;text-decoration:none;">
 
+									<table cellpadding="0" cellspacing="0" align="center" width="650">
+												<tbody>
+																<tr>
+																					<td>
+																					                    <table cellpadding="5" cellspacing="0" align="center" width="650">
+																															                    <tr> <td align="center">
+																																																<img src="https://scontent-gru1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/12316331_932005923542492_2407541284811252196_n.jpg?oh=5abd97a5ee6cf185dc31538127925644&oe=56E693B6" alt="Asvins" height="100" width="100" style="display:block;">
+																																																                        </td></tr>
+																																																												                        </table> 
+																																																																													</td>
+																																																																																	</tr>
+																																																																																	                <tr>
+																																																																																									               		<td><p style="border-bottom:1px solid; border-color:#909090; color:#909090;padding-bottom:3px;font-size:20px">Oi}! 
+																																																																																																		               		<br><br> Falta alguns dados para sua assinatura ficar completa e você receber os medicamentos. 
+																																																																																																											               		<br><br> Para isso basta seguir os seguintes passos:
+																																																																																																																				               		<br>1) Acesse o sistema
+																																																																																																																																		<br>2) Abra a aba "Contas"
+																																																																																																																																							<br>3) Preencha os dados que faltam
+																																																																																																																																												<br>4) Acesse o sistema
+																																																																																																																																												               		</p></td>
+																																																																																																																																																					            	</tr>
+																																																																																																																																																												            				
+																																																																																																																																																															</tbody>
+																																																																																																																																																															</table>
+																																																																																																																																																																</body>
+																																																																																																																																																																</html>
 `
 
 // 3) BEM VINDO
 const TemplateWelcome = `
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+			<meta charset="utf-8">
+					<title>Asvins - Seja Bem-Vindo </title>
+						</head>
+							<body style="color:#909090;font-family:verdana,arial,sans-serif;font-size:18px;text-align:center;text-decoration:none;">
+
+									<table cellpadding="0" cellspacing="0" align="center" width="650">
+												<tbody>
+																<tr>
+																					<td>
+																					                    <table cellpadding="5" cellspacing="0" align="center" width="650">
+																															                    <tr> <td align="center">
+																																																<img src="https://scontent-gru1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/12316331_932005923542492_2407541284811252196_n.jpg?oh=5abd97a5ee6cf185dc31538127925644&oe=56E693B6" alt="Asvins" height="100" width="100" style="display:block;">
+																																																                        </td></tr>
+																																																												                        </table> 
+																																																																													</td>
+																																																																																	</tr>
+																																																																																	                <tr>
+																																																																																									               		<td><p style="border-bottom:1px solid; border-color:#909090; color:#909090;padding-bottom:3px;font-size:20px">Oi! <br><br> Seja bem-vindo ao Sistema Asvins. <br> </p></td>
+																																																																																																		            	</tr>
+																																																																																																									            				
+																																																																																																												</tbody>
+																																																																																																												</table>
+																																																																																																													</body>
+																																																																																																													</html>
 
 `
