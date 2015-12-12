@@ -21,7 +21,7 @@ func DefRoutes() *router.Router {
 		m := mailer.Mail{
 			To:      []string{"asvins.poli@gmail.com"},
 			Subject: "Está na hora de tomar sua medicação!",
-			Body:    TemplatePackTime,
+			Body:    mailer.TemplatePackTime,
 		}
 
 		b, err := json.Marshal(&m)
