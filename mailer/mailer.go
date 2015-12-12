@@ -136,7 +136,7 @@ const TemplateFinishProfile = `
 																																																																													</td>
 																																																																																	</tr>
 																																																																																	                <tr>
-																																																																																									               		<td><p style="border-bottom:1px solid; border-color:#909090; color:#909090;padding-bottom:3px;font-size:20px">Oi}! 
+																																																																																									               		<td><p style="border-bottom:1px solid; border-color:#909090; color:#909090;padding-bottom:3px;font-size:20px">Oi! 
 																																																																																																		               		<br><br> Falta alguns dados para sua assinatura ficar completa e você receber os medicamentos. 
 																																																																																																											               		<br><br> Para isso basta seguir os seguintes passos:
 																																																																																																																				               		<br>1) Acesse o sistema
