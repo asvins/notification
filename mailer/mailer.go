@@ -28,7 +28,7 @@ func doSendMail(m Mail) error {
 		auth,
 		"asvins.poli@gmail.com",
 		m.To,
-		[]byte("Subject:"+m.Subject+"\r\n"+m.Body),
+		[]byte("MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\"\r\n"+"Subject:"+m.Subject+"\r\n"+m.Body),
 	)
 	if err != nil {
 		return err
